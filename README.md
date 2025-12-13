@@ -1,1 +1,2 @@
-# Projeto_Alerta
+# Lembretes-em-Python
+Tudo sobre Python...
