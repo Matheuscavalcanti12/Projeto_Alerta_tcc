@@ -1,0 +1,28 @@
+BIBLIOTECAS A SER BAIXADAS PARA O PROJETO
+
+python -m pip install numpy==1.26.4
+python -m pip install opencv-python==4.8.0.76
+
+VERSAO DO PYTHON A SER BAIXADA 
+
+python 3.10.00 a 3.10.09
+
+
+# Framework Web
+Flask==3.0.3
+
+# Integração com MySQL
+flask-mysqldb==2.0.0
+mysqlclient==2.2.4
+
+# Segurança de senha
+bcrypt==4.1.3
+
+# Visão computacional
+opencv-python==4.8.0.76
+
+# Dependência do OpenCV (VERSÃO FIXA)
+numpy==1.26.4
+
+# Utilidades do sistema
+psutil==5.9.8

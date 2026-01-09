@@ -3,7 +3,7 @@ import time
 import winsound
 import threading
 
-# --- SIRENE CONTÍNUA (RODA EM THREAD PARA NÃO TRAVAR) ---
+# ================== CONTROLE DA SIRENE ==================
 alarm_active = False
 
 def sirene_continua():
@@ -12,47 +12,66 @@ def sirene_continua():
         winsound.Beep(1800, 200)
         winsound.Beep(2200, 200)
 
-# Classificadores
-face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
-eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_eye_tree_eyeglasses.xml")
+# ================== CLASSIFICADORES ==================
+face_cascade = cv2.CascadeClassifier(
+    cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
+)
+eye_cascade = cv2.CascadeClassifier(
+    cv2.data.haarcascades + "haarcascade_eye_tree_eyeglasses.xml"
+)
 
-camera = cv2.VideoCapture(0)
+# ================== SELEÇÃO AUTOMÁTICA DE CÂMERA ==================
+camera = None
+camera_index = None
 
-if not camera.isOpened():
-    print("Não foi possível acessar a câmera.")
+for i in [1, 0]:  # tenta externa primeiro, depois interna
+    cam = cv2.VideoCapture(i)
+    if cam.isOpened():
+        camera = cam
+        camera_index = i
+        print(f"Câmera ativa: índice {i}")
+        break
+
+if camera is None:
+    print("Nenhuma câmera encontrada.")
     exit()
 
+# ================== CONTROLE DE OLHOS ==================
 closed_start = None
 EYE_CLOSED_THRESHOLD = 3  # segundos
-flash = False  # controle da tela piscando
+flash = False
 
+# ================== LOOP PRINCIPAL ==================
 while True:
     ret, frame = camera.read()
-
-    # Se der erro, mostra um frame preto pra não crashar
-    frame_display = frame.copy() if ret else None
 
     if not ret:
         print("Erro ao capturar vídeo.")
         break
 
+    frame_display = frame.copy()
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
+
+    faces = face_cascade.detectMultiScale(
+        gray, scaleFactor=1.1, minNeighbors=5
+    )
 
     eyes_detected = False
 
     for (x, y, w, h) in faces:
         roi_gray = gray[y:y+h, x:x+w]
-        eyes = eye_cascade.detectMultiScale(roi_gray, scaleFactor=1.1, minNeighbors=4)
+        eyes = eye_cascade.detectMultiScale(
+            roi_gray, scaleFactor=1.1, minNeighbors=4
+        )
 
         if len(eyes) > 0:
             eyes_detected = True
 
+    # ================== LÓGICA DE ALERTA ==================
     if eyes_detected:
         closed_start = None
         if alarm_active:
             alarm_active = False
-        frame_display = frame.copy()
 
     else:
         if closed_start is None:
@@ -62,30 +81,40 @@ while True:
 
             if elapsed >= EYE_CLOSED_THRESHOLD:
 
-                # Ativa sirene
                 if not alarm_active:
                     alarm_active = True
-                    threading.Thread(target=sirene_continua, daemon=True).start()
+                    threading.Thread(
+                        target=sirene_continua, daemon=True
+                    ).start()
 
-                # Pisca a tela em vermelho
                 flash = not flash
                 if flash:
-                    frame_display = cv2.addWeighted(frame, 0.3,
-                                                    (frame*0 + [0, 0, 255]).astype('uint8'),
-                                                    0.7, 0)
-                else:
-                    frame_display = frame.copy()
+                    red_frame = frame.copy()
+                    red_frame[:] = (0, 0, 255)
+                    frame_display = cv2.addWeighted(
+                        frame, 0.3, red_frame, 0.7, 0
+                    )
 
-                cv2.putText(frame_display, "OLHOS FECHADOS! ALERTA!!!",
-                            (50, 80), cv2.FONT_HERSHEY_SIMPLEX, 1.4, (0, 0, 255), 4)
-            else:
-                frame_display = frame.copy()
+                cv2.putText(
+                    frame_display,
+                    "OLHOS FECHADOS! ALERTA!!!",
+                    (50, 80),
+                    cv2.FONT_HERSHEY_SIMPLEX,
+                    1.4,
+                    (0, 0, 255),
+                    4
+                )
 
-    cv2.imshow("Monitoramento dos Olhos - Q para sair", frame_display)
+    # ================== EXIBIÇÃO ==================
+    cv2.imshow(
+        f"Monitoramento dos Olhos (Camera {camera_index}) - Q para sair",
+        frame_display
+    )
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
+# ================== FINALIZAÇÃO ==================
 alarm_active = False
 camera.release()
 cv2.destroyAllWindows()

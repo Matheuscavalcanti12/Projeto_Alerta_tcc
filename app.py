@@ -13,6 +13,8 @@ app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'alerta_sono'
+app.config['MYSQL_PORT'] = 3307
+
 
 mysql = MySQL(app)
 
@@ -132,4 +134,5 @@ def status_sistema():
 # ========================================
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
+
