@@ -1,3 +1,2 @@
-# Projeto alerta de sonolencia :)
+# Lembretes-em-Python
 Tudo sobre Python...
-

@@ -11,3 +11,15 @@ CREATE TABLE usuarios (
 
 
 SHOW VARIABLES LIKE 'port';
+
+USE alerta_sono;
+
+CREATE TABLE logs_sistema (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(100) NOT NULL,
+    acao VARCHAR(50) NOT NULL,
+    data_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+SELECT * FROM logs_sistema;
