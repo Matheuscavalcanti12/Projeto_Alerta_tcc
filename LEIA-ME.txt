@@ -2,6 +2,9 @@ BIBLIOTECAS A SER BAIXADAS PARA O PROJETO
 
 python -m pip install numpy==1.26.4
 python -m pip install opencv-python==4.8.0.76
+pip install flask
+C:/Users/Aluno/AppData/Local/Programs/Python/Python312/python.exe -m pip install flask flask-mysqldb mysqlclient bcrypt psutil
+
 
 VERSAO DO PYTHON A SER BAIXADA 
 
