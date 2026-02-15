@@ -38,7 +38,7 @@ if camera is None:
 
 # ================== CONTROLE DE OLHOS ==================
 closed_start = None
-EYE_CLOSED_THRESHOLD = 3  # segundos
+EYE_CLOSED_THRESHOLD = 2  # segundos
 flash = False
 
 # ================== LOOP PRINCIPAL ==================
