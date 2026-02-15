@@ -29,3 +29,7 @@ numpy==1.26.4
 
 # Utilidades do sistema
 psutil==5.9.8
+
+#acessar via Web
+itoken
+ngrok http 5000
