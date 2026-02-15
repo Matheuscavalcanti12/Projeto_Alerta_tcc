@@ -1,0 +1,1 @@
+console.log("SPA carregada com sucesso!");

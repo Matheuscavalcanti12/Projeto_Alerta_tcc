@@ -1,35 +1,91 @@
 body {
-    background: #0a0a0a;
+    background: #0f172a;
     font-family: Arial;
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
     margin-top: 70px;
 }
 
 .container {
-    background: #111;
-    padding: 25px;
-    width: 350px;
-    margin: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #000;
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #125572, #6366f1);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px rgba(18, 124, 170, 0.5);
 }
 
 input {
-    width: 100%;
+    width: 92%;
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
     border-radius: 5px;
     border: none;
 }
 
 button {
-    margin-top: 15px;
-    width: 100%;
-    padding: 12px;
-    background: red;
-    color: white;
+    margin-top: 20px;
+    width: 95%;
+    padding: 20px;
+    background: #6366f1;
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 5px;
     font-size: 16px;
 }
+
+
+/* ================= roda-pe ================= */
+
+.footer {
+    background: #111;
+    color: white;
+    padding: 40px 20px 10px;
+    margin-top: 100px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 15px;
+    color: #ff3c3c;
+}
+
+.footer-section a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: #ff3c3c;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #aaa;
+}
+
