@@ -9,14 +9,14 @@ body {
 .container {
     display: inline-block;
     padding: 15px 30px;
-    background: linear-gradient(45deg, #125572, #6366f1);
+    background-color:  #223563;
     color: rgb(255, 255, 255);
     text-decoration: none;
     border-radius: 50px;
     font-weight: bold;
     letter-spacing: 1px;
     transition: 0.3s ease;
-    box-shadow: 0 0 15px rgba(18, 124, 170, 0.5);
+    box-shadow: 0 0 15px #000000;
 }
 
 input {
@@ -31,18 +31,17 @@ button {
     margin-top: 20px;
     width: 95%;
     padding: 20px;
-    background: #6366f1;
+    background: #3d3fa0;
     color: rgb(255, 255, 255);
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 16px;
 }
 
 
-/* ================= roda-pe ================= */
 
 .footer {
-    background: #111;
+    background: #11111173;
     color: white;
     padding: 40px 20px 10px;
     margin-top: 100px;
@@ -65,7 +64,7 @@ button {
 .footer-section h3,
 .footer-section h4 {
     margin-bottom: 15px;
-    color: #ff3c3c;
+    color: #493cff;
 }
 
 .footer-section a {
@@ -77,7 +76,7 @@ button {
 }
 
 .footer-section a:hover {
-    color: #ff3c3c;
+    color: #493cff;
 }
 
 .footer-bottom {
