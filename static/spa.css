@@ -89,25 +89,24 @@ section {
 /* Gradientes modernos */
 #sobre {
     background-image: linear-gradient(to bottom,#101338 60%, #0f112a);
-    box-shadow: 0 0 20px rgb(84, 54, 219);
+    box-shadow: 0 2px 7px  rgb(84, 54, 219);
     width: 100%;
 }
 
 #funcionamento {
     background-image: linear-gradient(to bottom,#0f112a 60%, #0d0f24);
-    box-shadow: 0 0 20px rgb(84, 54, 219);
+    box-shadow: 0 2px 7px  rgb(84, 54, 219);
     width: 100%;
 }
 
 #tecnologias {
     background-image: linear-gradient(to bottom,#0d0f24 60%, #0d0f24);
-    box-shadow: 0 0 20px rgb(84, 54, 219);
+    box-shadow: 0 2px 7px rgb(84, 54, 219);
     width: 100%;
 }
 
 #contato {
     background-image: linear-gradient(to bottom,#0d0f24, #151338);
-    box-shadow: 0 0 20px rgb(84, 54, 219);
     width: 100%;
 }
 
@@ -340,7 +339,7 @@ p {
     color: white;
     padding: 40px 20px 10px;
     width: 100%;
-    box-shadow: 0 0 20px rgb(84, 54, 219);
+    box-shadow: 0 2px 7px rgb(84, 54, 219);
 }
 
 .footer-container {
