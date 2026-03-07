@@ -33,3 +33,9 @@ psutil==5.9.8
 #acessar via Web
 itoken
 ngrok http 5000
+
+#xampp
+usa em porta 3307
+
+#banco-MySql
+banco em porta 3307
