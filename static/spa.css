@@ -382,3 +382,26 @@ p {
     font-size: 14px;
     color: #aaa;
 }
+
+/*================== tecnologias usadas-lista ================= */
+
+.tech-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tech-list li {
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.tech-list a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.tech-list a:hover {
+    color: #00bfff; /* muda a cor ao passar o mouse */
+}
