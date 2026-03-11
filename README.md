@@ -28,6 +28,7 @@ Estilização da aplicação.
 Responsável pelas interações da interface.
 
 --
+
 ⚙️ Como Executar
 
 Clone o repositório:
@@ -42,16 +43,19 @@ Execute o projeto:
 
 python detector_sono.py
 
+
 🎓 Projeto Acadêmico
 
 Projeto desenvolvido como Trabalho de Conclusão de Curso (TCC)
 
 na área de Visão Computacional aplicada à segurança no trânsito.
 
+
 --
 👨‍💻 Autores
 
 Matheus Cavalcanti | Silas Mancini| Lorena Freire| Nicolas Mukai
+
 
 
 
