@@ -1,10 +1,10 @@
 🚗 Sobre o Projeto
 
 O Projeto Alerta foi desenvolvido como Trabalho de Conclusão de Curso (TCC).
-O objetivo é ajudar a prevenir acidentes causados por sono ao volante.
-O sistema utiliza uma câmera para monitorar o rosto do motorista em tempo real.
-Com técnicas de visão computacional, o programa identifica quando os olhos permanecem fechados por muito tempo.
-Quando isso acontece, um alerta sonoro é ativado, chamando a atenção do motorista.
+O objetivo do sistema é ajudar a prevenir acidentes causados por sono ao volante.
+O projeto utiliza uma câmera para monitorar o rosto do motorista em tempo real.
+Por meio de técnicas de visão computacional, o programa identifica quando os olhos permanecem fechados por um período prolongado.
+Quando essa situação é detectada, um alerta sonoro é ativado para chamar a atenção do motorista.
 --
 🧠 Como o sistema funciona
 
@@ -54,4 +54,5 @@ na área de Visão Computacional aplicada à segurança no trânsito.
 --
 👨‍💻 Autores
 Matheus Cavalcanti | Silas Mancini| Lorena Freire| Nicolas Mukai
+
 
