@@ -33,7 +33,7 @@ Responsável pelas interações da interface.
 
 Clone o repositório:
 
-git clone https://github.com/Matheuscavalcanti12/projeto-alerta.git
+git clone https://github.com/Matheuscavalcanti12/Projeto_Alerta_tcc.git
 
 Instale as dependências:
 
@@ -58,6 +58,7 @@ na área de Visão Computacional aplicada à segurança no trânsito.
 👨‍💻 Autores
 
 Matheus Cavalcanti | Silas Mancini| Lorena Freire| Nicolas Mukai
+
 
 
 
